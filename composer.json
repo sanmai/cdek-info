@@ -19,6 +19,7 @@
     ],
     "require": {
         "php": "^7.0",
+        "phpdocumentor/reflection-docblock": "^4.3",
         "sanmai/pipeline": "^0.3.2 || ^2.0 || ^3.0.1"
     },
     "conflict": {},
