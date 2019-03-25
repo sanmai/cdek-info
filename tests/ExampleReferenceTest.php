@@ -43,14 +43,15 @@ class ExampleReferenceTest extends TestCase
 
         $this->assertSame(<<<'JSON'
 {
-    "Tests\\CdekSDK\\Reference\\Fixtures\\ExampleReference::TESTING": "Проверка.",
-    "Tests\\CdekSDK\\Reference\\Fixtures\\ExampleReference::MORE_TESTING": "Ещё проверка."
+    "1": "Проверка.",
+    "2": "Ещё проверка."
 }
 JSON
 , json_encode($ref, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 
-        foreach ($ref as $name => $summary) {
-            $this->assertGreaterThan(0, constant($name));
+        foreach ($ref as $id => $summary) {
+            $this->assertIsInt($id);
+            $this->assertGreaterThan(0, $id);
             $this->assertGreaterThan(0, strlen($summary));
         }
     }

@@ -42,8 +42,8 @@ class CommonTest extends TestCase
     {
         $this->assertCount($count, $ref);
 
-        foreach ($ref as $name => $summary) {
-            $this->assertGreaterThan(0, constant($name));
+        foreach ($ref as $id => $summary) {
+            $this->assertGreaterThan(0, $id);
             $this->assertGreaterThan(0, strlen($summary));
         }
     }

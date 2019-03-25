@@ -84,7 +84,7 @@ abstract class Reference implements \JsonSerializable, \IteratorAggregate
         foreach ($constants as $name => $docblock) {
             $docblock = $factory->create($docblock);
 
-            yield sprintf('%s::%s', static::class, $name) => $docblock->getSummary();
+            yield constant(sprintf('%s::%s', static::class, $name)) => $docblock->getSummary();
         }
     }
 
