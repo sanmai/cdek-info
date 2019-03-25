@@ -31,8 +31,11 @@ composer require sanmai/cdek-info
 ```php
 require_once 'vendor/autoload.php';
 
-// TODO
+$orderStatusList = new \CdekSDK\Reference\OrderStatus();
 
+foreach ($orderStatusList as $id => $description) {
+    echo "$id\t$description\n";
+}
 ```
 
 ## Замечания
