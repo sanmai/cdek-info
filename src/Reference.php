@@ -68,7 +68,7 @@ abstract class Reference implements \JsonSerializable, \IteratorAggregate
         $filename = $reflectionClass->getFileName();
         assert(is_string($filename));
 
-        preg_match_all(':(/\*\*[^/]*/|)\s*const ([^\s]+) =:s', file_get_contents($filename), $constants, PREG_SET_ORDER);
+        preg_match_all(':(/\*\*[^{]*?/|)\s*const ([^\s]+) =:s', file_get_contents($filename), $constants, PREG_SET_ORDER);
 
         foreach ($constants as list(, $docComment, $name)) {
             yield $name => $docComment;

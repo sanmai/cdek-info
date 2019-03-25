@@ -48,6 +48,14 @@ class CommonTest extends TestCase
         }
     }
 
+    /**
+     * @dataProvider allReferences
+     */
+    public function test_it_can_contains_expected_number_of_items_with_fallback_parser(Reference $ref, int $count)
+    {
+        $this->assertCount($count, self::useFallbackParser($ref));
+    }
+
     public static function allReferences()
     {
         yield 'OrderStatus' => [
