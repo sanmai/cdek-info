@@ -19,6 +19,8 @@
     ],
     "require": {
         "php": "^7.0",
+        "marc-mabe/php-enum": "^3.1 || ^4.0",
+        "myclabs/php-enum": "^1.6",
         "phpdocumentor/reflection-docblock": "^4.3",
         "sanmai/pipeline": "^0.3.2 || ^2.0 || ^3.0.1"
     },
